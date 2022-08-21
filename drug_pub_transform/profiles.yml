@@ -8,5 +8,5 @@ drug_pub_transform:
       password: changeme
       port: 5432
       dbname: postgres
-      schema: public
+      schema: dev
       threads: 4
