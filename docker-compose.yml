@@ -6,7 +6,8 @@ services:
     image: ghcr.io/dbt-labs/dbt-postgres:1.2.latest
     tty: true
     volumes:
-    - $PWD:/app
+    - .:/usr/app
+    working_dir: /usr/app
     networks:
       - postgres
     entrypoint: /bin/bash
