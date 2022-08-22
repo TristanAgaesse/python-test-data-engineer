@@ -28,6 +28,7 @@ models:
 
     datamart:
       +schema: mrt
+      +materialized: table
 
 seeds:
   drug_pub_transform:

@@ -1,6 +1,6 @@
 # python-test-data-engineer
 
-This is a technical test for a data engineering manager position.
+This is a technical demonstration of a data pipeline using DBT and Postgres.
 
 ## Architecture of the solution
 

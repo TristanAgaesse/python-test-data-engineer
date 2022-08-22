@@ -1,0 +1,5 @@
+TABLE=$1
+OUTPUT_FILE=$2
+
+PGPASSWORD=$DB_PASSWORD psql -h $DB_HOST -p 5432 -U $DB_USER -c "\copy  ${TABLE} TO '${OUTPUT_FILE}';"
+
