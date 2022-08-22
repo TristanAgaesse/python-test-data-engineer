@@ -18,14 +18,16 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 models:
-  reservoir:
-    +schema: rsv
+  drug_pub_transform:
 
-  compute:
-    +schema: cmp
+    reservoir:
+      +schema: rsv
 
-  datamart:
-    +schema: mrt
+    compute:
+      +schema: cmp
+
+    datamart:
+      +schema: mrt
 
 seeds:
   drug_pub_transform:
