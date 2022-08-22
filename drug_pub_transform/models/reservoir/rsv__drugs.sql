@@ -1,2 +1,2 @@
 select *
-from {{ ref('seed', 'drugs') }}
+from {{ source(generate_schema_name('seed'), 'drugs') }}

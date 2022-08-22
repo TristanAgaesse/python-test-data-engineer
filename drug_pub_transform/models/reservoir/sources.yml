@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dev_seed
+    tables:
+      - name: pubmed_json
+      - name: drugs
+      - name: clinical_trials
+      - name: pubmed

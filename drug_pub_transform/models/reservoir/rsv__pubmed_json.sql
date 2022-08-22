@@ -1,9 +1,9 @@
-WITH json_data as (
+SELECT 
+    id, 
+    title, 
+    date, 
+    journal
 
-    SELECT *
-    FROM {{ source('dev_seed.pubmed_json') }}
-)
-
-select *
-from json_to_recordset(json_data)
-as x("id" varchar, "title" varchar, "date" varchar, "journal" varchar)
+FROM  {{ source(generate_schema_name('seed'),'pubmed_json') }} p
+    CROSS JOIN LATERAL  
+    json_to_recordset(p.doc) as x("id" varchar, "title" varchar, "date" varchar, "journal" varchar)
