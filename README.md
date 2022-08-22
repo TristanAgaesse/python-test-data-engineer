@@ -34,6 +34,8 @@ Environment variables (database credentials, hosts...) are set in a .env file. T
 
 DBT can handle several environments (for instance dev, uat, prod), multiple developers (using different schema for each developer).
 
+DBT can generate documentation automatically.
+
 The git commit messages follow the semantic release naming convention, so that versions of the code can be automatically incremented. 
 
 ## How to use
@@ -50,6 +52,12 @@ Pre-requisite:
 make up
 make load
 make transform
+```
+
+### Generate documentation
+
+```bash
+make docs
 ```
 
 ## Comments on scalability

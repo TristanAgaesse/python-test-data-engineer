@@ -19,4 +19,7 @@ load: up
 
 transform: up
 	docker exec --workdir /usr/app/drug_pub_transform dbt_container   dbt run --profiles-dir .
-	
+
+docs:
+	docker exec --workdir /usr/app/drug_pub_transform dbt_container   dbt docs generate --profiles-dir .
+	docker exec --workdir /usr/app/drug_pub_transform dbt_container   dbt docs serve --profiles-dir .

@@ -11,6 +11,9 @@ services:
     networks:
       - postgres
     entrypoint: /bin/bash
+    ports:
+      - "8080:8080"
+
 
   postgres:
     container_name: postgres_container
