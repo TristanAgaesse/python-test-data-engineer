@@ -1,9 +1,9 @@
 
-name: 'drug_pub_transform'
+name: 'drug_publication'
 version: '1.0.0'
 config-version: 2
 
-profile: 'drug_pub_transform'
+profile: 'drug_publication'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -18,7 +18,7 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 models:
-  drug_pub_transform:
+  drug_publication:
 
     reservoir:
       +schema: rsv
@@ -31,6 +31,6 @@ models:
       +materialized: table
 
 seeds:
-  drug_pub_transform:
+  drug_publication:
     +schema: seed
 

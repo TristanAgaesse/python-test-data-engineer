@@ -50,8 +50,7 @@ Pre-requisite:
 
 ```bash
 make up
-make load
-make transform
+make run
 ```
 
 ### Generate documentation
