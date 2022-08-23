@@ -36,18 +36,17 @@ trial_mention AS (
 
 ),
 all_data AS (
-    SELECT '{"type":"journal"}' || to_jsonb(t) 
-    FROM (SELECT * FROM journal_mention) t
-    
-    UNION ALL
 
-    SELECT '{"type":"pubmed"}' || to_jsonb(t)
-    FROM (SELECT * FROM pubmed_mention) t
+    SELECT jsonb_build_object(
+		'journal', j,
+        'pubmed', p,
+        'clinical_trial', c
+	)
+	 
+    FROM (SELECT json_agg(to_jsonb(jm)) as mentions from journal_mention jm) j,
+	(SELECT json_agg(to_jsonb(pm)) as mentions from pubmed_mention pm)  p,
+	(SELECT json_agg(to_jsonb(tm)) as mentions from trial_mention tm)  c
 
-    UNION ALL
-
-    SELECT '{"type":"clinical_trial"}' || to_jsonb(t)
-    FROM (SELECT * FROM trial_mention) t
 )
 select *
 from all_data a
