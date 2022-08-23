@@ -2,7 +2,37 @@
 
 This is a technical demonstration of a data pipeline using DBT and Postgres.
 
+## How to use
+
+### Install
+
+Pre-requisite:
+- install docker
+- store the environment configuration in a .env file similar to .env.example 
+
+### RUN
+
+```bash
+make up
+make run
+```
+
+### Generate documentation
+
+```bash
+make docs
+```
+
 ## Architecture of the solution
+
+### Code organisation
+
+Folders:
+- data contains the input files.
+- output contains the output files.
+- drug_publication contains the dbt transformations.
+- analysis contains an ad-hoc script to analyse the output file
+- sql_test contains sql queries for a technical test
 
 ### Data loading
 
@@ -38,26 +68,7 @@ DBT can generate documentation automatically.
 
 The git commit messages follow the semantic release naming convention, so that versions of the code can be automatically incremented. 
 
-## How to use
 
-### Install
-
-Pre-requisite:
-- install docker
-- store the environment configuration in a .env file similar to .env.example 
-
-### RUN
-
-```bash
-make up
-make run
-```
-
-### Generate documentation
-
-```bash
-make docs
-```
 
 ## Comments on scalability
 
